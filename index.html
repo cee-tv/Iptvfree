@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from jeromelaliag.link/iptv/ by HTTrack Website Copier/3.x [XR&CO'2017], Fri, 21 Jun 2024 03:46:33 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<meta charset="utf-8" />
 	<meta name="referrer" content="no-referrer" />
@@ -12,7 +9,7 @@
 	<meta name="description" content="Stream your favorite TV m3u-playlist seamlessly with our feature-rich M3U IPTV browser app. It is completely free and easy to use!">
 	<meta name="keywords" content="IPTV, M3U, M3U8, M3U IPTV, M3U IPTV, Live, TV, Movie, Video, Smart, Smart TV, Playlist, Browser, Desktop, Mobile, Smartphone, free, easy, ad-free, CORS">
 	<meta name="author" content="Jaroslav Herber - Herber eDevelopment">
-	<link rel="canonical" href="index.html">
+	<link rel="canonical" href="https://jeromelaliag.link/iptv/">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/controls.css"/>
@@ -22,7 +19,7 @@
 			</script>
 	<script src="js/lang.js"></script>
 	<script src="js/lang-browser.js"></script>
-	<script src="../../cdn.jsdelivr.net/npm/hls.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
 </head>
 <body id="body" class="browser">
 	<div id="history_manager" class="fullscreen">
@@ -36,7 +33,7 @@
 				<div class="CLEAR"></div>
 			</div>
 			<div id="main_settings">
-				<p class="hint i18n ALIGNCENTER" data-langid="corsHint">⚠ Some channels might not play due to strict CORS policy. <a href="../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin" target="_blank">More info and how to fix this.</a></p>
+				<p class="hint i18n ALIGNCENTER" data-langid="corsHint">⚠ Some channels might not play due to strict CORS policy. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin" target="_blank">More info and how to fix this.</a></p>
 				<div class="form-row">
 					<label class="i18n" for="sLangId" data-langid="chooseLang">Language</label>
 					<select id="sLangId" name="lang" onchange="setLangId(this.value);" autofocus="true" class="focusable" data-index="0">
@@ -149,9 +146,9 @@
 			</div>
 			<div id="premium_settings"></div>
 			<div id="settings_footer">
-				<p class="i18n" data-langid="helpHint"><span class="LINK" onclick="getEl('sM3uUrl').value = '../../external.html?link=https://jeromelaliag.link/demo-pl.php';">Insert demo playlist</span><br><br><span class="LINK" onclick="showGuide();">show user guide</span></p>
-				<p class="i18n" data-langid="supportContactLinked" style="margin-top: 36px;">Support: <a href="mailto:jeromelaliag@yahoo.com">jeromelaliag@yahoo.com</a> or visit <a href="../../external.html?link=https://jeromelaliag.link/en/">https://jeromelaliag.link/en</a></p>
-				<p class="i18n" data-langid="donate">If you like, you can leave a donation:<br><a href="../../external.html?link=https://jeromelaliag.link/" target="_blank">https://jeromelaliag.link</a></p>
+				<p class="i18n" data-langid="helpHint"><span class="LINK" onclick="getEl('sM3uUrl').value = 'https://jeromelaliag.link/demo-pl.php';">Insert demo playlist</span><br><br><span class="LINK" onclick="showGuide();">show user guide</span></p>
+				<p class="i18n" data-langid="supportContactLinked" style="margin-top: 36px;">Support: <a href="mailto:jeromelaliag@yahoo.com">jeromelaliag@yahoo.com</a> or visit <a href="https://jeromelaliag.link/en/">https://jeromelaliag.link/en</a></p>
+				<p class="i18n" data-langid="donate">If you like, you can leave a donation:<br><a href="https://jeromelaliag.link/" target="_blank">https://jeromelaliag.link</a></p>
 			</div>
 		</div>
 	</div>
@@ -237,7 +234,7 @@
 	<div id="debugger"></div>
 	<div id="custom_confirm" class="fullscreen"></div>
 	<div id="play_button" class="fullscreen" onclick="playVideo();"><div class="play_button"></div></div>
-	<video id="player" poster="../../external.html?link=https://postimg.cc/jDgXRBtp" autoplay="autoplay" crossorigin="anonymous" width="1920" height="1080" data-setup="{}"></video>
+	<video id="player" poster="https://i.postimg.cc/rpcYNLbw/splash.png" autoplay="autoplay" crossorigin="anonymous" width="1920" height="1080" data-setup="{}"></video>
 	<div id="playback_controller">
 		<div id="progress_container">
 			<progress id="progress" value="0" min="0"></progress>
@@ -308,7 +305,7 @@
 		} catch( e ) { console.log(e); }
 
 		setTimeout(function() {
-			var oX = document.createElement("script"); oX.async = true; oX.src = "updateec92.php" + sAppVersion;
+			var oX = document.createElement("script"); oX.async = true; oX.src = "update.php?v=" + sAppVersion;
 			getEl("js_updates").appendChild(oX);
 		}, 1500);
 		downloadButton();
@@ -316,6 +313,4 @@
 	</script>
 
 </body>
-
-<!-- Mirrored from jeromelaliag.link/iptv/ by HTTrack Website Copier/3.x [XR&CO'2017], Fri, 21 Jun 2024 03:46:49 GMT -->
 </html>
