@@ -1,88 +1,1726 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <base href="/IPTV-Player/" />
-    <meta charset="UTF-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="IPTV Viewer" />
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>">
+        <link rel="preconnect" href="https://api.iptv-web.app">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Noto+Color+Emoji&display=swap">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Stream publicly available live TV channels.">
+        <meta name="generator" content="Astro v4.10.2">
+        <meta name="theme-color" content="#000000">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="home" href="https://iptv-web.app/">
+        <link rel="canonical" href="https://iptv-web.app/">
+        <link rel="sitemap" href="/sitemap-index.xml">
+        <meta name="googlebot" content="notranslate">
+        <meta name="google-site-verification" content="f9t27g4PfcjrZN3PeB8NwebkYHzWnrWTX8eiU-OA4nc">
+        <link rel="stylesheet" href="/__/index.BzFWEGc7.css">
+        <link rel="stylesheet" href="/__/_country_.DFxizHEy.css">
+    </head>
+    <body>
+        <style>
+            astro-island,astro-slot,astro-static-slot {
+                display: contents
+            }
+        </style>
+        <script>
+            (()=>{
+                var i = t=>{
+                    let e = async()=>{
+                        await (await t())()
+                    }
+                    ;
+                    "requestIdleCallback"in window ? window.requestIdleCallback(e) : setTimeout(e, 200)
+                }
+                ;
+                (self.Astro || (self.Astro = {})).idle = i;
+                window.dispatchEvent(new Event("astro:idle"));
+            }
+            )();
+            ;(()=>{
+                var A = Object.defineProperty;
+                var g = (i,o,a)=>o in i ? A(i, o, {
+                    enumerable: !0,
+                    configurable: !0,
+                    writable: !0,
+                    value: a
+                }) : i[o] = a;
+                var d = (i,o,a)=>g(i, typeof o != "symbol" ? o + "" : o, a);
+                {
+                    let i = {
+                        0: t=>m(t),
+                        1: t=>a(t),
+                        2: t=>new RegExp(t),
+                        3: t=>new Date(t),
+                        4: t=>new Map(a(t)),
+                        5: t=>new Set(a(t)),
+                        6: t=>BigInt(t),
+                        7: t=>new URL(t),
+                        8: t=>new Uint8Array(t),
+                        9: t=>new Uint16Array(t),
+                        10: t=>new Uint32Array(t)
+                    }
+                      , o = t=>{
+                        let[l,e] = t;
+                        return l in i ? i[l](e) : void 0
+                    }
+                      , a = t=>t.map(o)
+                      , m = t=>typeof t != "object" || t === null ? t : Object.fromEntries(Object.entries(t).map(([l,e])=>[l, o(e)]));
+                    class y extends HTMLElement {
+                        constructor() {
+                            super(...arguments);
+                            d(this, "Component");
+                            d(this, "hydrator");
+                            d(this, "hydrate", async()=>{
+                                var b;
+                                if (!this.hydrator || !this.isConnected)
+                                    return;
+                                let e = (b = this.parentElement) == null ? void 0 : b.closest("astro-island[ssr]");
+                                if (e) {
+                                    e.addEventListener("astro:hydrate", this.hydrate, {
+                                        once: !0
+                                    });
+                                    return
+                                }
+                                let c = this.querySelectorAll("astro-slot")
+                                  , n = {}
+                                  , h = this.querySelectorAll("template[data-astro-template]");
+                                for (let r of h) {
+                                    let s = r.closest(this.tagName);
+                                    s != null && s.isSameNode(this) && (n[r.getAttribute("data-astro-template") || "default"] = r.innerHTML,
+                                    r.remove())
+                                }
+                                for (let r of c) {
+                                    let s = r.closest(this.tagName);
+                                    s != null && s.isSameNode(this) && (n[r.getAttribute("name") || "default"] = r.innerHTML)
+                                }
+                                let p;
+                                try {
+                                    p = this.hasAttribute("props") ? m(JSON.parse(this.getAttribute("props"))) : {}
+                                } catch (r) {
+                                    let s = this.getAttribute("component-url") || "<unknown>"
+                                      , v = this.getAttribute("component-export");
+                                    throw v && (s += ` (export ${v})`),
+                                    console.error(`[hydrate] Error parsing props for component ${s}`, this.getAttribute("props"), r),
+                                    r
+                                }
+                                let u;
+                                await this.hydrator(this)(this.Component, p, n, {
+                                    client: this.getAttribute("client")
+                                }),
+                                this.removeAttribute("ssr"),
+                                this.dispatchEvent(new CustomEvent("astro:hydrate"))
+                            }
+                            );
+                            d(this, "unmount", ()=>{
+                                this.isConnected || this.dispatchEvent(new CustomEvent("astro:unmount"))
+                            }
+                            )
+                        }
+                        disconnectedCallback() {
+                            document.removeEventListener("astro:after-swap", this.unmount),
+                            document.addEventListener("astro:after-swap", this.unmount, {
+                                once: !0
+                            })
+                        }
+                        connectedCallback() {
+                            if (!this.hasAttribute("await-children") || document.readyState === "interactive" || document.readyState === "complete")
+                                this.childrenConnectedCallback();
+                            else {
+                                let e = ()=>{
+                                    document.removeEventListener("DOMContentLoaded", e),
+                                    c.disconnect(),
+                                    this.childrenConnectedCallback()
+                                }
+                                  , c = new MutationObserver(()=>{
+                                    var n;
+                                    ((n = this.lastChild) == null ? void 0 : n.nodeType) === Node.COMMENT_NODE && this.lastChild.nodeValue === "astro:end" && (this.lastChild.remove(),
+                                    e())
+                                }
+                                );
+                                c.observe(this, {
+                                    childList: !0
+                                }),
+                                document.addEventListener("DOMContentLoaded", e)
+                            }
+                        }
+                        async childrenConnectedCallback() {
+                            let e = this.getAttribute("before-hydration-url");
+                            e && await import(e),
+                            this.start()
+                        }
+                        async start() {
+                            let e = JSON.parse(this.getAttribute("opts"))
+                              , c = this.getAttribute("client");
+                            if (Astro[c] === void 0) {
+                                window.addEventListener(`astro:${c}`, ()=>this.start(), {
+                                    once: !0
+                                });
+                                return
+                            }
+                            try {
+                                await Astro[c](async()=>{
+                                    let n = this.getAttribute("renderer-url")
+                                      , [h,{default: p}] = await Promise.all([import(this.getAttribute("component-url")), n ? import(n) : ()=>()=>{}
+                                    ])
+                                      , u = this.getAttribute("component-export") || "default";
+                                    if (!u.includes("."))
+                                        this.Component = h[u];
+                                    else {
+                                        this.Component = h;
+                                        for (let f of u.split("."))
+                                            this.Component = this.Component[f]
+                                    }
+                                    return this.hydrator = p,
+                                    this.hydrate
+                                }
+                                , e, this)
+                            } catch (n) {
+                                console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`, n)
+                            }
+                        }
+                        attributeChangedCallback() {
+                            this.hydrate()
+                        }
+                    }
+                    d(y, "observedAttributes", ["props"]),
+                    customElements.get("astro-island") || customElements.define("astro-island", y)
+                }
+            }
+            )();
+        </script>
+        <astro-island uid="Z1A1pBD" component-url="/__/search.Cl-kwnwM.js" component-export="default" renderer-url="/__/client.Cx1FBVJX.js" props="{}" ssr="" client="idle" opts="{&quot;name&quot;:&quot;Search&quot;,&quot;value&quot;:true}" await-children="">
+            <dialog class="svelte-1e80734">
+                <span class="svelte-1e80734">
+                    <input type="text" placeholder="Search Countries" class="svelte-1e80734" value="">
+                </span>
+            </dialog>
+            <button type="button" aria-label="Search countries" class="svelte-1e80734" data-svelte-h="svelte-4b64kk">🔍</button>
+            <!--astro:end-->
+        </astro-island>
+        <details>
+            <summary>Suggested </summary>
+            <section id="suggestions"></section>
+        </details>
+        <script type="module">
+            const o="https://api.iptv-web.app/suggestCountry",t=document.getElementById("suggestions");if(t){for(const n of new Set([...window.navigator.languages.map(e=>e.slice(-2))]))if(n){const e=document.getElementById(`${n}`.toUpperCase());e&&t.insertAdjacentHTML("afterbegin",e.outerHTML)}try{t.parentElement.open=!0;const n=await(await fetch(o)).text();if(t&&n&&![...t.children].some(e=>e?.id===n)){const e=document.getElementById(`${n}`);e&&t.insertAdjacentHTML("afterbegin",e.outerHTML)}}catch{}t.previousElementSibling?.insertAdjacentText("beforeend"," - "+t.childNodes?.length)}
+        </script>
+        <details>
+            <summary>Africa - 59 </summary>
+            <section>
+                <a id="DZ" href="/DZ/">
+                    &#x1f1e9;&#x1f1ff;<p>Algeria</p>
+                </a>
+                <a id="AO" href="/AO/">
+                    &#x1f1e6;&#x1f1f4;<p>Angola</p>
+                </a>
+                <a id="BJ" href="/BJ/">
+                    &#x1f1e7;&#x1f1ef;<p>Benin</p>
+                </a>
+                <a id="BW" href="/BW/">
+                    &#x1f1e7;&#x1f1fc;<p>Botswana</p>
+                </a>
+                <a id="BF" href="/BF/">
+                    &#x1f1e7;&#x1f1eb;<p>Burkina Faso</p>
+                </a>
+                <a id="BI" href="/BI/">
+                    &#x1f1e7;&#x1f1ee;<p>Burundi</p>
+                </a>
+                <a id="CM" href="/CM/">
+                    &#x1f1e8;&#x1f1f2;<p>Cameroon</p>
+                </a>
+                <a id="CV" href="/CV/">
+                    &#x1f1e8;&#x1f1fb;<p>Cape Verde</p>
+                </a>
+                <a id="CF" href="/CF/">
+                    &#x1f1e8;&#x1f1eb;<p>Central African Republic</p>
+                </a>
+                <a id="TD" href="/TD/">
+                    &#x1f1f9;&#x1f1e9;<p>Chad</p>
+                </a>
+                <a id="KM" href="/KM/">
+                    &#x1f1f0;&#x1f1f2;<p>Comoros</p>
+                </a>
+                <a id="CD" href="/CD/">
+                    &#x1f1e8;&#x1f1e9;<p>Democratic Republic of the Congo</p>
+                </a>
+                <a id="DJ" href="/DJ/">
+                    &#x1f1e9;&#x1f1ef;<p>Djibouti</p>
+                </a>
+                <a id="EG" href="/EG/">
+                    &#x1f1ea;&#x1f1ec;<p>Egypt</p>
+                </a>
+                <a id="GQ" href="/GQ/">
+                    &#x1f1ec;&#x1f1f6;<p>Equatorial Guinea</p>
+                </a>
+                <a id="ER" href="/ER/">
+                    &#x1f1ea;&#x1f1f7;<p>Eritrea</p>
+                </a>
+                <a id="ET" href="/ET/">
+                    &#x1f1ea;&#x1f1f9;<p>Ethiopia</p>
+                </a>
+                <a id="TF" href="/TF/">
+                    &#x1f1f9;&#x1f1eb;<p>French Southern Territories</p>
+                </a>
+                <a id="GA" href="/GA/">
+                    &#x1f1ec;&#x1f1e6;<p>Gabon</p>
+                </a>
+                <a id="GM" href="/GM/">
+                    &#x1f1ec;&#x1f1f2;<p>Gambia</p>
+                </a>
+                <a id="GH" href="/GH/">
+                    &#x1f1ec;&#x1f1ed;<p>Ghana</p>
+                </a>
+                <a id="GN" href="/GN/">
+                    &#x1f1ec;&#x1f1f3;<p>Guinea</p>
+                </a>
+                <a id="GW" href="/GW/">
+                    &#x1f1ec;&#x1f1fc;<p>Guinea-Bissau</p>
+                </a>
+                <a id="CI" href="/CI/">
+                    &#x1f1e8;&#x1f1ee;<p>Ivory Coast</p>
+                </a>
+                <a id="KE" href="/KE/">
+                    &#x1f1f0;&#x1f1ea;<p>Kenya</p>
+                </a>
+                <a id="LS" href="/LS/">
+                    &#x1f1f1;&#x1f1f8;<p>Lesotho</p>
+                </a>
+                <a id="LR" href="/LR/">
+                    &#x1f1f1;&#x1f1f7;<p>Liberia</p>
+                </a>
+                <a id="LY" href="/LY/">
+                    &#x1f1f1;&#x1f1fe;<p>Libya</p>
+                </a>
+                <a id="MG" href="/MG/">
+                    &#x1f1f2;&#x1f1ec;<p>Madagascar</p>
+                </a>
+                <a id="MW" href="/MW/">
+                    &#x1f1f2;&#x1f1fc;<p>Malawi</p>
+                </a>
+                <a id="ML" href="/ML/">
+                    &#x1f1f2;&#x1f1f1;<p>Mali</p>
+                </a>
+                <a id="MR" href="/MR/">
+                    &#x1f1f2;&#x1f1f7;<p>Mauritania</p>
+                </a>
+                <a id="MU" href="/MU/">
+                    &#x1f1f2;&#x1f1fa;<p>Mauritius</p>
+                </a>
+                <a id="YT" href="/YT/">
+                    &#x1f1fe;&#x1f1f9;<p>Mayotte</p>
+                </a>
+                <a id="MA" href="/MA/">
+                    &#x1f1f2;&#x1f1e6;<p>Morocco</p>
+                </a>
+                <a id="MZ" href="/MZ/">
+                    &#x1f1f2;&#x1f1ff;<p>Mozambique</p>
+                </a>
+                <a id="NA" href="/NA/">
+                    &#x1f1f3;&#x1f1e6;<p>Namibia</p>
+                </a>
+                <a id="NE" href="/NE/">
+                    &#x1f1f3;&#x1f1ea;<p>Niger</p>
+                </a>
+                <a id="NG" href="/NG/">
+                    &#x1f1f3;&#x1f1ec;<p>Nigeria</p>
+                </a>
+                <a id="CG" href="/CG/">
+                    &#x1f1e8;&#x1f1ec;<p>Republic of the Congo</p>
+                </a>
+                <a id="RW" href="/RW/">
+                    &#x1f1f7;&#x1f1fc;<p>Rwanda</p>
+                </a>
+                <a id="RE" href="/RE/">
+                    &#x1f1f7;&#x1f1ea;<p>Réunion</p>
+                </a>
+                <a id="SH" href="/SH/">
+                    &#x1f1f8;&#x1f1ed;<p>Saint Helena</p>
+                </a>
+                <a id="SN" href="/SN/">
+                    &#x1f1f8;&#x1f1f3;<p>Senegal</p>
+                </a>
+                <a id="SC" href="/SC/">
+                    &#x1f1f8;&#x1f1e8;<p>Seychelles</p>
+                </a>
+                <a id="SL" href="/SL/">
+                    &#x1f1f8;&#x1f1f1;<p>Sierra Leone</p>
+                </a>
+                <a id="SO" href="/SO/">
+                    &#x1f1f8;&#x1f1f4;<p>Somalia</p>
+                </a>
+                <a id="ZA" href="/ZA/">
+                    &#x1f1ff;&#x1f1e6;<p>South Africa</p>
+                </a>
+                <a id="SS" href="/SS/">
+                    &#x1f1f8;&#x1f1f8;<p>South Sudan</p>
+                </a>
+                <a id="SD" href="/SD/">
+                    &#x1f1f8;&#x1f1e9;<p>Sudan</p>
+                </a>
+                <a id="SZ" href="/SZ/">
+                    &#x1f1f8;&#x1f1ff;<p>Swaziland</p>
+                </a>
+                <a id="ST" href="/ST/">
+                    &#x1f1f8;&#x1f1f9;<p>São Tomé and Príncipe</p>
+                </a>
+                <a id="TZ" href="/TZ/">
+                    &#x1f1f9;&#x1f1ff;<p>Tanzania</p>
+                </a>
+                <a id="TG" href="/TG/">
+                    &#x1f1f9;&#x1f1ec;<p>Togo</p>
+                </a>
+                <a id="TN" href="/TN/">
+                    &#x1f1f9;&#x1f1f3;<p>Tunisia</p>
+                </a>
+                <a id="UG" href="/UG/">
+                    &#x1f1fa;&#x1f1ec;<p>Uganda</p>
+                </a>
+                <a id="EH" href="/EH/">
+                    &#x1f1ea;&#x1f1ed;<p>Western Sahara</p>
+                </a>
+                <a id="ZM" href="/ZM/">
+                    &#x1f1ff;&#x1f1f2;<p>Zambia</p>
+                </a>
+                <a id="ZW" href="/ZW/">
+                    &#x1f1ff;&#x1f1fc;<p>Zimbabwe</p>
+                </a>
+            </section>
+        </details>
+        <details>
+            <summary>Asia - 50 </summary>
+            <section>
+                <a id="AF" href="/AF/">
+                    &#x1f1e6;&#x1f1eb;<p>Afghanistan</p>
+                </a>
+                <a id="AM" href="/AM/">
+                    &#x1f1e6;&#x1f1f2;<p>Armenia</p>
+                </a>
+                <a id="AZ" href="/AZ/">
+                    &#x1f1e6;&#x1f1ff;<p>Azerbaijan</p>
+                </a>
+                <a id="BH" href="/BH/">
+                    &#x1f1e7;&#x1f1ed;<p>Bahrain</p>
+                </a>
+                <a id="BD" href="/BD/">
+                    &#x1f1e7;&#x1f1e9;<p>Bangladesh</p>
+                </a>
+                <a id="BT" href="/BT/">
+                    &#x1f1e7;&#x1f1f9;<p>Bhutan</p>
+                </a>
+                <a id="BN" href="/BN/">
+                    &#x1f1e7;&#x1f1f3;<p>Brunei</p>
+                </a>
+                <a id="KH" href="/KH/">
+                    &#x1f1f0;&#x1f1ed;<p>Cambodia</p>
+                </a>
+                <a id="CN" href="/CN/">
+                    &#x1f1e8;&#x1f1f3;<p>China</p>
+                </a>
+                <a id="CY" href="/CY/">
+                    &#x1f1e8;&#x1f1fe;<p>Cyprus</p>
+                </a>
+                <a id="TL" href="/TL/">
+                    &#x1f1f9;&#x1f1f1;<p>East Timor</p>
+                </a>
+                <a id="GE" href="/GE/">
+                    &#x1f1ec;&#x1f1ea;<p>Georgia</p>
+                </a>
+                <a id="IN" href="/IN/">
+                    &#x1f1ee;&#x1f1f3;<p>India</p>
+                </a>
+                <a id="ID" href="/ID/">
+                    &#x1f1ee;&#x1f1e9;<p>Indonesia</p>
+                </a>
+                <a id="IR" href="/IR/">
+                    &#x1f1ee;&#x1f1f7;<p>Iran</p>
+                </a>
+                <a id="IQ" href="/IQ/">
+                    &#x1f1ee;&#x1f1f6;<p>Iraq</p>
+                </a>
+                <a id="IL" href="/IL/">
+                    &#x1f1ee;&#x1f1f1;<p>Israel</p>
+                </a>
+                <a id="JP" href="/JP/">
+                    &#x1f1ef;&#x1f1f5;<p>Japan</p>
+                </a>
+                <a id="JO" href="/JO/">
+                    &#x1f1ef;&#x1f1f4;<p>Jordan</p>
+                </a>
+                <a id="KZ" href="/KZ/">
+                    &#x1f1f0;&#x1f1ff;<p>Kazakhstan</p>
+                </a>
+                <a id="KW" href="/KW/">
+                    &#x1f1f0;&#x1f1fc;<p>Kuwait</p>
+                </a>
+                <a id="KG" href="/KG/">
+                    &#x1f1f0;&#x1f1ec;<p>Kyrgyzstan</p>
+                </a>
+                <a id="LA" href="/LA/">
+                    &#x1f1f1;&#x1f1e6;<p>Laos</p>
+                </a>
+                <a id="LB" href="/LB/">
+                    &#x1f1f1;&#x1f1e7;<p>Lebanon</p>
+                </a>
+                <a id="MY" href="/MY/">
+                    &#x1f1f2;&#x1f1fe;<p>Malaysia</p>
+                </a>
+                <a id="MV" href="/MV/">
+                    &#x1f1f2;&#x1f1fb;<p>Maldives</p>
+                </a>
+                <a id="MN" href="/MN/">
+                    &#x1f1f2;&#x1f1f3;<p>Mongolia</p>
+                </a>
+                <a id="MM" href="/MM/">
+                    &#x1f1f2;&#x1f1f2;<p>Myanmar (Burma)</p>
+                </a>
+                <a id="NP" href="/NP/">
+                    &#x1f1f3;&#x1f1f5;<p>Nepal</p>
+                </a>
+                <a id="KP" href="/KP/">
+                    &#x1f1f0;&#x1f1f5;<p>North Korea</p>
+                </a>
+                <a id="OM" href="/OM/">
+                    &#x1f1f4;&#x1f1f2;<p>Oman</p>
+                </a>
+                <a id="PK" href="/PK/">
+                    &#x1f1f5;&#x1f1f0;<p>Pakistan</p>
+                </a>
+                <a id="PS" href="/PS/">
+                    &#x1f1f5;&#x1f1f8;<p>Palestine</p>
+                </a>
+                <a id="PH" href="/PH/">
+                    &#x1f1f5;&#x1f1ed;<p>Philippines</p>
+                </a>
+                <a id="QA" href="/QA/">
+                    &#x1f1f6;&#x1f1e6;<p>Qatar</p>
+                </a>
+                <a id="RU" href="/RU/">
+                    &#x1f1f7;&#x1f1fa;<p>Russia</p>
+                </a>
+                <a id="SA" href="/SA/">
+                    &#x1f1f8;&#x1f1e6;<p>Saudi Arabia</p>
+                </a>
+                <a id="SG" href="/SG/">
+                    &#x1f1f8;&#x1f1ec;<p>Singapore</p>
+                </a>
+                <a id="KR" href="/KR/">
+                    &#x1f1f0;&#x1f1f7;<p>South Korea</p>
+                </a>
+                <a id="LK" href="/LK/">
+                    &#x1f1f1;&#x1f1f0;<p>Sri Lanka</p>
+                </a>
+                <a id="SY" href="/SY/">
+                    &#x1f1f8;&#x1f1fe;<p>Syria</p>
+                </a>
+                <a id="TW" href="/TW/">
+                    &#x1f1f9;&#x1f1fc;<p>Taiwan</p>
+                </a>
+                <a id="TJ" href="/TJ/">
+                    &#x1f1f9;&#x1f1ef;<p>Tajikistan</p>
+                </a>
+                <a id="TH" href="/TH/">
+                    &#x1f1f9;&#x1f1ed;<p>Thailand</p>
+                </a>
+                <a id="TR" href="/TR/">
+                    &#x1f1f9;&#x1f1f7;<p>Turkey</p>
+                </a>
+                <a id="TM" href="/TM/">
+                    &#x1f1f9;&#x1f1f2;<p>Turkmenistan</p>
+                </a>
+                <a id="AE" href="/AE/">
+                    &#x1f1e6;&#x1f1ea;<p>United Arab Emirates</p>
+                </a>
+                <a id="UZ" href="/UZ/">
+                    &#x1f1fa;&#x1f1ff;<p>Uzbekistan</p>
+                </a>
+                <a id="VN" href="/VN/">
+                    &#x1f1fb;&#x1f1f3;<p>Vietnam</p>
+                </a>
+                <a id="YE" href="/YE/">
+                    &#x1f1fe;&#x1f1ea;<p>Yemen</p>
+                </a>
+            </section>
+        </details>
+        <details>
+            <summary>Europe - 50 </summary>
+            <section>
+                <a id="AL" href="/AL/">
+                    &#x1f1e6;&#x1f1f1;<p>Albania</p>
+                </a>
+                <a id="AD" href="/AD/">
+                    &#x1f1e6;&#x1f1e9;<p>Andorra</p>
+                </a>
+                <a id="AM" href="/AM/">
+                    &#x1f1e6;&#x1f1f2;<p>Armenia</p>
+                </a>
+                <a id="AT" href="/AT/">
+                    &#x1f1e6;&#x1f1f9;<p>Austria</p>
+                </a>
+                <a id="AZ" href="/AZ/">
+                    &#x1f1e6;&#x1f1ff;<p>Azerbaijan</p>
+                </a>
+                <a id="BY" href="/BY/">
+                    &#x1f1e7;&#x1f1fe;<p>Belarus</p>
+                </a>
+                <a id="BE" href="/BE/">
+                    &#x1f1e7;&#x1f1ea;<p>Belgium</p>
+                </a>
+                <a id="BA" href="/BA/">
+                    &#x1f1e7;&#x1f1e6;<p>Bosnia and Herzegovina</p>
+                </a>
+                <a id="BG" href="/BG/">
+                    &#x1f1e7;&#x1f1ec;<p>Bulgaria</p>
+                </a>
+                <a id="HR" href="/HR/">
+                    &#x1f1ed;&#x1f1f7;<p>Croatia</p>
+                </a>
+                <a id="CY" href="/CY/">
+                    &#x1f1e8;&#x1f1fe;<p>Cyprus</p>
+                </a>
+                <a id="CZ" href="/CZ/">
+                    &#x1f1e8;&#x1f1ff;<p>Czech Republic</p>
+                </a>
+                <a id="DK" href="/DK/">
+                    &#x1f1e9;&#x1f1f0;<p>Denmark</p>
+                </a>
+                <a id="EE" href="/EE/">
+                    &#x1f1ea;&#x1f1ea;<p>Estonia</p>
+                </a>
+                <a id="FI" href="/FI/">
+                    &#x1f1eb;&#x1f1ee;<p>Finland</p>
+                </a>
+                <a id="FR" href="/FR/">
+                    &#x1f1eb;&#x1f1f7;<p>France</p>
+                </a>
+                <a id="GE" href="/GE/">
+                    &#x1f1ec;&#x1f1ea;<p>Georgia</p>
+                </a>
+                <a id="DE" href="/DE/">
+                    &#x1f1e9;&#x1f1ea;<p>Germany</p>
+                </a>
+                <a id="GR" href="/GR/">
+                    &#x1f1ec;&#x1f1f7;<p>Greece</p>
+                </a>
+                <a id="HU" href="/HU/">
+                    &#x1f1ed;&#x1f1fa;<p>Hungary</p>
+                </a>
+                <a id="IS" href="/IS/">
+                    &#x1f1ee;&#x1f1f8;<p>Iceland</p>
+                </a>
+                <a id="IE" href="/IE/">
+                    &#x1f1ee;&#x1f1ea;<p>Ireland</p>
+                </a>
+                <a id="IT" href="/IT/">
+                    &#x1f1ee;&#x1f1f9;<p>Italy</p>
+                </a>
+                <a id="KZ" href="/KZ/">
+                    &#x1f1f0;&#x1f1ff;<p>Kazakhstan</p>
+                </a>
+                <a id="LV" href="/LV/">
+                    &#x1f1f1;&#x1f1fb;<p>Latvia</p>
+                </a>
+                <a id="LI" href="/LI/">
+                    &#x1f1f1;&#x1f1ee;<p>Liechtenstein</p>
+                </a>
+                <a id="LT" href="/LT/">
+                    &#x1f1f1;&#x1f1f9;<p>Lithuania</p>
+                </a>
+                <a id="LU" href="/LU/">
+                    &#x1f1f1;&#x1f1fa;<p>Luxembourg</p>
+                </a>
+                <a id="MT" href="/MT/">
+                    &#x1f1f2;&#x1f1f9;<p>Malta</p>
+                </a>
+                <a id="MD" href="/MD/">
+                    &#x1f1f2;&#x1f1e9;<p>Moldova</p>
+                </a>
+                <a id="MC" href="/MC/">
+                    &#x1f1f2;&#x1f1e8;<p>Monaco</p>
+                </a>
+                <a id="ME" href="/ME/">
+                    &#x1f1f2;&#x1f1ea;<p>Montenegro</p>
+                </a>
+                <a id="NL" href="/NL/">
+                    &#x1f1f3;&#x1f1f1;<p>Netherlands</p>
+                </a>
+                <a id="MK" href="/MK/">
+                    &#x1f1f2;&#x1f1f0;<p>North Macedonia</p>
+                </a>
+                <a id="NO" href="/NO/">
+                    &#x1f1f3;&#x1f1f4;<p>Norway</p>
+                </a>
+                <a id="PL" href="/PL/">
+                    &#x1f1f5;&#x1f1f1;<p>Poland</p>
+                </a>
+                <a id="PT" href="/PT/">
+                    &#x1f1f5;&#x1f1f9;<p>Portugal</p>
+                </a>
+                <a id="RO" href="/RO/">
+                    &#x1f1f7;&#x1f1f4;<p>Romania</p>
+                </a>
+                <a id="RU" href="/RU/">
+                    &#x1f1f7;&#x1f1fa;<p>Russia</p>
+                </a>
+                <a id="SM" href="/SM/">
+                    &#x1f1f8;&#x1f1f2;<p>San Marino</p>
+                </a>
+                <a id="RS" href="/RS/">
+                    &#x1f1f7;&#x1f1f8;<p>Serbia</p>
+                </a>
+                <a id="SK" href="/SK/">
+                    &#x1f1f8;&#x1f1f0;<p>Slovakia</p>
+                </a>
+                <a id="SI" href="/SI/">
+                    &#x1f1f8;&#x1f1ee;<p>Slovenia</p>
+                </a>
+                <a id="ES" href="/ES/">
+                    &#x1f1ea;&#x1f1f8;<p>Spain</p>
+                </a>
+                <a id="SE" href="/SE/">
+                    &#x1f1f8;&#x1f1ea;<p>Sweden</p>
+                </a>
+                <a id="CH" href="/CH/">
+                    &#x1f1e8;&#x1f1ed;<p>Switzerland</p>
+                </a>
+                <a id="TR" href="/TR/">
+                    &#x1f1f9;&#x1f1f7;<p>Turkey</p>
+                </a>
+                <a id="UA" href="/UA/">
+                    &#x1f1fa;&#x1f1e6;<p>Ukraine</p>
+                </a>
+                <a id="UK" href="/UK/">
+                    🇬🇧 <p>United Kingdom</p>
+                </a>
+                <a id="VA" href="/VA/">
+                    &#x1f1fb;&#x1f1e6;<p>Vatican City</p>
+                </a>
+            </section>
+        </details>
+        <details>
+            <summary>North America - 40 </summary>
+            <section>
+                <a id="AI" href="/AI/">
+                    &#x1f1e6;&#x1f1ee;<p>Anguilla</p>
+                </a>
+                <a id="AG" href="/AG/">
+                    &#x1f1e6;&#x1f1ec;<p>Antigua and Barbuda</p>
+                </a>
+                <a id="AW" href="/AW/">
+                    &#x1f1e6;&#x1f1fc;<p>Aruba</p>
+                </a>
+                <a id="BS" href="/BS/">
+                    &#x1f1e7;&#x1f1f8;<p>Bahamas</p>
+                </a>
+                <a id="BB" href="/BB/">
+                    &#x1f1e7;&#x1f1e7;<p>Barbados</p>
+                </a>
+                <a id="BZ" href="/BZ/">
+                    &#x1f1e7;&#x1f1ff;<p>Belize</p>
+                </a>
+                <a id="BM" href="/BM/">
+                    &#x1f1e7;&#x1f1f2;<p>Bermuda</p>
+                </a>
+                <a id="VG" href="/VG/">
+                    &#x1f1fb;&#x1f1ec;<p>British Virgin Islands</p>
+                </a>
+                <a id="CA" href="/CA/">
+                    &#x1f1e8;&#x1f1e6;<p>Canada</p>
+                </a>
+                <a id="KY" href="/KY/">
+                    &#x1f1f0;&#x1f1fe;<p>Cayman Islands</p>
+                </a>
+                <a id="CR" href="/CR/">
+                    &#x1f1e8;&#x1f1f7;<p>Costa Rica</p>
+                </a>
+                <a id="CU" href="/CU/">
+                    &#x1f1e8;&#x1f1fa;<p>Cuba</p>
+                </a>
+                <a id="CW" href="/CW/">
+                    &#x1f1e8;&#x1f1fc;<p>Curacao</p>
+                </a>
+                <a id="DM" href="/DM/">
+                    &#x1f1e9;&#x1f1f2;<p>Dominica</p>
+                </a>
+                <a id="DO" href="/DO/">
+                    &#x1f1e9;&#x1f1f4;<p>Dominican Republic</p>
+                </a>
+                <a id="SV" href="/SV/">
+                    &#x1f1f8;&#x1f1fb;<p>El Salvador</p>
+                </a>
+                <a id="GL" href="/GL/">
+                    &#x1f1ec;&#x1f1f1;<p>Greenland</p>
+                </a>
+                <a id="GD" href="/GD/">
+                    &#x1f1ec;&#x1f1e9;<p>Grenada</p>
+                </a>
+                <a id="GP" href="/GP/">
+                    &#x1f1ec;&#x1f1f5;<p>Guadeloupe</p>
+                </a>
+                <a id="GT" href="/GT/">
+                    &#x1f1ec;&#x1f1f9;<p>Guatemala</p>
+                </a>
+                <a id="HT" href="/HT/">
+                    &#x1f1ed;&#x1f1f9;<p>Haiti</p>
+                </a>
+                <a id="HN" href="/HN/">
+                    &#x1f1ed;&#x1f1f3;<p>Honduras</p>
+                </a>
+                <a id="JM" href="/JM/">
+                    &#x1f1ef;&#x1f1f2;<p>Jamaica</p>
+                </a>
+                <a id="MQ" href="/MQ/">
+                    &#x1f1f2;&#x1f1f6;<p>Martinique</p>
+                </a>
+                <a id="MX" href="/MX/">
+                    &#x1f1f2;&#x1f1fd;<p>Mexico</p>
+                </a>
+                <a id="MS" href="/MS/">
+                    &#x1f1f2;&#x1f1f8;<p>Montserrat</p>
+                </a>
+                <a id="NI" href="/NI/">
+                    &#x1f1f3;&#x1f1ee;<p>Nicaragua</p>
+                </a>
+                <a id="PA" href="/PA/">
+                    &#x1f1f5;&#x1f1e6;<p>Panama</p>
+                </a>
+                <a id="PR" href="/PR/">
+                    &#x1f1f5;&#x1f1f7;<p>Puerto Rico</p>
+                </a>
+                <a id="BL" href="/BL/">
+                    &#x1f1e7;&#x1f1f1;<p>Saint Barthélemy</p>
+                </a>
+                <a id="KN" href="/KN/">
+                    &#x1f1f0;&#x1f1f3;<p>Saint Kitts and Nevis</p>
+                </a>
+                <a id="LC" href="/LC/">
+                    &#x1f1f1;&#x1f1e8;<p>Saint Lucia</p>
+                </a>
+                <a id="MF" href="/MF/">
+                    &#x1f1f2;&#x1f1eb;<p>Saint Martin</p>
+                </a>
+                <a id="PM" href="/PM/">
+                    &#x1f1f5;&#x1f1f2;<p>Saint Pierre and Miquelon</p>
+                </a>
+                <a id="VC" href="/VC/">
+                    &#x1f1fb;&#x1f1e8;<p>Saint Vincent and the Grenadines</p>
+                </a>
+                <a id="SX" href="/SX/">
+                    &#x1f1f8;&#x1f1fd;<p>Sint Maarten</p>
+                </a>
+                <a id="TT" href="/TT/">
+                    &#x1f1f9;&#x1f1f9;<p>Trinidad and Tobago</p>
+                </a>
+                <a id="TC" href="/TC/">
+                    &#x1f1f9;&#x1f1e8;<p>Turks and Caicos Islands</p>
+                </a>
+                <a id="VI" href="/VI/">
+                    &#x1f1fb;&#x1f1ee;<p>U.S. Virgin Islands</p>
+                </a>
+                <a id="US" href="/US/">
+                    &#x1f1fa;&#x1f1f8;<p>United States</p>
+                </a>
+            </section>
+        </details>
+        <details>
+            <summary>Oceania - 25 </summary>
+            <section>
+                <a id="AS" href="/AS/">
+                    &#x1f1e6;&#x1f1f8;<p>American Samoa</p>
+                </a>
+                <a id="AU" href="/AU/">
+                    &#x1f1e6;&#x1f1fa;<p>Australia</p>
+                </a>
+                <a id="CK" href="/CK/">
+                    &#x1f1e8;&#x1f1f0;<p>Cook Islands</p>
+                </a>
+                <a id="FJ" href="/FJ/">
+                    &#x1f1eb;&#x1f1ef;<p>Fiji</p>
+                </a>
+                <a id="PF" href="/PF/">
+                    &#x1f1f5;&#x1f1eb;<p>French Polynesia</p>
+                </a>
+                <a id="GU" href="/GU/">
+                    &#x1f1ec;&#x1f1fa;<p>Guam</p>
+                </a>
+                <a id="KI" href="/KI/">
+                    &#x1f1f0;&#x1f1ee;<p>Kiribati</p>
+                </a>
+                <a id="MH" href="/MH/">
+                    &#x1f1f2;&#x1f1ed;<p>Marshall Islands</p>
+                </a>
+                <a id="FM" href="/FM/">
+                    &#x1f1eb;&#x1f1f2;<p>Micronesia</p>
+                </a>
+                <a id="NR" href="/NR/">
+                    &#x1f1f3;&#x1f1f7;<p>Nauru</p>
+                </a>
+                <a id="NC" href="/NC/">
+                    &#x1f1f3;&#x1f1e8;<p>New Caledonia</p>
+                </a>
+                <a id="NZ" href="/NZ/">
+                    &#x1f1f3;&#x1f1ff;<p>New Zealand</p>
+                </a>
+                <a id="NU" href="/NU/">
+                    &#x1f1f3;&#x1f1fa;<p>Niue</p>
+                </a>
+                <a id="NF" href="/NF/">
+                    &#x1f1f3;&#x1f1eb;<p>Norfolk Island</p>
+                </a>
+                <a id="MP" href="/MP/">
+                    &#x1f1f2;&#x1f1f5;<p>Northern Mariana Islands</p>
+                </a>
+                <a id="PW" href="/PW/">
+                    &#x1f1f5;&#x1f1fc;<p>Palau</p>
+                </a>
+                <a id="PG" href="/PG/">
+                    &#x1f1f5;&#x1f1ec;<p>Papua New Guinea</p>
+                </a>
+                <a id="PN" href="/PN/">
+                    &#x1f1f5;&#x1f1f3;<p>Pitcairn Islands</p>
+                </a>
+                <a id="WS" href="/WS/">
+                    &#x1f1fc;&#x1f1f8;<p>Samoa</p>
+                </a>
+                <a id="SB" href="/SB/">
+                    &#x1f1f8;&#x1f1e7;<p>Solomon Islands</p>
+                </a>
+                <a id="TK" href="/TK/">
+                    &#x1f1f9;&#x1f1f0;<p>Tokelau</p>
+                </a>
+                <a id="TO" href="/TO/">
+                    &#x1f1f9;&#x1f1f4;<p>Tonga</p>
+                </a>
+                <a id="TV" href="/TV/">
+                    &#x1f1f9;&#x1f1fb;<p>Tuvalu</p>
+                </a>
+                <a id="VU" href="/VU/">
+                    &#x1f1fb;&#x1f1fa;<p>Vanuatu</p>
+                </a>
+                <a id="WF" href="/WF/">
+                    &#x1f1fc;&#x1f1eb;<p>Wallis and Futuna</p>
+                </a>
+            </section>
+        </details>
+        <details>
+            <summary>South America - 16 </summary>
+            <section>
+                <a id="AR" href="/AR/">
+                    &#x1f1e6;&#x1f1f7;<p>Argentina</p>
+                </a>
+                <a id="BO" href="/BO/">
+                    &#x1f1e7;&#x1f1f4;<p>Bolivia</p>
+                </a>
+                <a id="BV" href="/BV/">
+                    &#x1f1e7;&#x1f1fb;<p>Bouvet Island</p>
+                </a>
+                <a id="BR" href="/BR/">
+                    &#x1f1e7;&#x1f1f7;<p>Brazil</p>
+                </a>
+                <a id="CL" href="/CL/">
+                    &#x1f1e8;&#x1f1f1;<p>Chile</p>
+                </a>
+                <a id="CO" href="/CO/">
+                    &#x1f1e8;&#x1f1f4;<p>Colombia</p>
+                </a>
+                <a id="EC" href="/EC/">
+                    &#x1f1ea;&#x1f1e8;<p>Ecuador</p>
+                </a>
+                <a id="FK" href="/FK/">
+                    &#x1f1eb;&#x1f1f0;<p>Falkland Islands</p>
+                </a>
+                <a id="GF" href="/GF/">
+                    &#x1f1ec;&#x1f1eb;<p>French Guiana</p>
+                </a>
+                <a id="GY" href="/GY/">
+                    &#x1f1ec;&#x1f1fe;<p>Guyana</p>
+                </a>
+                <a id="PY" href="/PY/">
+                    &#x1f1f5;&#x1f1fe;<p>Paraguay</p>
+                </a>
+                <a id="PE" href="/PE/">
+                    &#x1f1f5;&#x1f1ea;<p>Peru</p>
+                </a>
+                <a id="GS" href="/GS/">
+                    &#x1f1ec;&#x1f1f8;<p>South Georgia and the South Sandwich Islands</p>
+                </a>
+                <a id="SR" href="/SR/">
+                    &#x1f1f8;&#x1f1f7;<p>Suriname</p>
+                </a>
+                <a id="UY" href="/UY/">
+                    &#x1f1fa;&#x1f1fe;<p>Uruguay</p>
+                </a>
+                <a id="VE" href="/VE/">
+                    &#x1f1fb;&#x1f1ea;<p>Venezuela</p>
+                </a>
+            </section>
+        </details>
+        <details>
+            <summary>Worldwide - 250 </summary>
+            <section>
+                <a id="AF" href="/AF/">
+                    &#x1f1e6;&#x1f1eb;<p>Afghanistan</p>
+                </a>
+                <a id="AL" href="/AL/">
+                    &#x1f1e6;&#x1f1f1;<p>Albania</p>
+                </a>
+                <a id="DZ" href="/DZ/">
+                    &#x1f1e9;&#x1f1ff;<p>Algeria</p>
+                </a>
+                <a id="AS" href="/AS/">
+                    &#x1f1e6;&#x1f1f8;<p>American Samoa</p>
+                </a>
+                <a id="AD" href="/AD/">
+                    &#x1f1e6;&#x1f1e9;<p>Andorra</p>
+                </a>
+                <a id="AO" href="/AO/">
+                    &#x1f1e6;&#x1f1f4;<p>Angola</p>
+                </a>
+                <a id="AI" href="/AI/">
+                    &#x1f1e6;&#x1f1ee;<p>Anguilla</p>
+                </a>
+                <a id="AQ" href="/AQ/">
+                    &#x1f1e6;&#x1f1f6;<p>Antarctica</p>
+                </a>
+                <a id="AG" href="/AG/">
+                    &#x1f1e6;&#x1f1ec;<p>Antigua and Barbuda</p>
+                </a>
+                <a id="AR" href="/AR/">
+                    &#x1f1e6;&#x1f1f7;<p>Argentina</p>
+                </a>
+                <a id="AM" href="/AM/">
+                    &#x1f1e6;&#x1f1f2;<p>Armenia</p>
+                </a>
+                <a id="AW" href="/AW/">
+                    &#x1f1e6;&#x1f1fc;<p>Aruba</p>
+                </a>
+                <a id="AU" href="/AU/">
+                    &#x1f1e6;&#x1f1fa;<p>Australia</p>
+                </a>
+                <a id="AT" href="/AT/">
+                    &#x1f1e6;&#x1f1f9;<p>Austria</p>
+                </a>
+                <a id="AZ" href="/AZ/">
+                    &#x1f1e6;&#x1f1ff;<p>Azerbaijan</p>
+                </a>
+                <a id="BS" href="/BS/">
+                    &#x1f1e7;&#x1f1f8;<p>Bahamas</p>
+                </a>
+                <a id="BH" href="/BH/">
+                    &#x1f1e7;&#x1f1ed;<p>Bahrain</p>
+                </a>
+                <a id="BD" href="/BD/">
+                    &#x1f1e7;&#x1f1e9;<p>Bangladesh</p>
+                </a>
+                <a id="BB" href="/BB/">
+                    &#x1f1e7;&#x1f1e7;<p>Barbados</p>
+                </a>
+                <a id="BY" href="/BY/">
+                    &#x1f1e7;&#x1f1fe;<p>Belarus</p>
+                </a>
+                <a id="BE" href="/BE/">
+                    &#x1f1e7;&#x1f1ea;<p>Belgium</p>
+                </a>
+                <a id="BZ" href="/BZ/">
+                    &#x1f1e7;&#x1f1ff;<p>Belize</p>
+                </a>
+                <a id="BJ" href="/BJ/">
+                    &#x1f1e7;&#x1f1ef;<p>Benin</p>
+                </a>
+                <a id="BM" href="/BM/">
+                    &#x1f1e7;&#x1f1f2;<p>Bermuda</p>
+                </a>
+                <a id="BT" href="/BT/">
+                    &#x1f1e7;&#x1f1f9;<p>Bhutan</p>
+                </a>
+                <a id="BO" href="/BO/">
+                    &#x1f1e7;&#x1f1f4;<p>Bolivia</p>
+                </a>
+                <a id="BQ" href="/BQ/">
+                    &#x1f1e7;&#x1f1f6;<p>Bonaire</p>
+                </a>
+                <a id="BA" href="/BA/">
+                    &#x1f1e7;&#x1f1e6;<p>Bosnia and Herzegovina</p>
+                </a>
+                <a id="BW" href="/BW/">
+                    &#x1f1e7;&#x1f1fc;<p>Botswana</p>
+                </a>
+                <a id="BV" href="/BV/">
+                    &#x1f1e7;&#x1f1fb;<p>Bouvet Island</p>
+                </a>
+                <a id="BR" href="/BR/">
+                    &#x1f1e7;&#x1f1f7;<p>Brazil</p>
+                </a>
+                <a id="IO" href="/IO/">
+                    &#x1f1ee;&#x1f1f4;<p>British Indian Ocean Territory</p>
+                </a>
+                <a id="VG" href="/VG/">
+                    &#x1f1fb;&#x1f1ec;<p>British Virgin Islands</p>
+                </a>
+                <a id="BN" href="/BN/">
+                    &#x1f1e7;&#x1f1f3;<p>Brunei</p>
+                </a>
+                <a id="BG" href="/BG/">
+                    &#x1f1e7;&#x1f1ec;<p>Bulgaria</p>
+                </a>
+                <a id="BF" href="/BF/">
+                    &#x1f1e7;&#x1f1eb;<p>Burkina Faso</p>
+                </a>
+                <a id="BI" href="/BI/">
+                    &#x1f1e7;&#x1f1ee;<p>Burundi</p>
+                </a>
+                <a id="KH" href="/KH/">
+                    &#x1f1f0;&#x1f1ed;<p>Cambodia</p>
+                </a>
+                <a id="CM" href="/CM/">
+                    &#x1f1e8;&#x1f1f2;<p>Cameroon</p>
+                </a>
+                <a id="CA" href="/CA/">
+                    &#x1f1e8;&#x1f1e6;<p>Canada</p>
+                </a>
+                <a id="CV" href="/CV/">
+                    &#x1f1e8;&#x1f1fb;<p>Cape Verde</p>
+                </a>
+                <a id="KY" href="/KY/">
+                    &#x1f1f0;&#x1f1fe;<p>Cayman Islands</p>
+                </a>
+                <a id="CF" href="/CF/">
+                    &#x1f1e8;&#x1f1eb;<p>Central African Republic</p>
+                </a>
+                <a id="TD" href="/TD/">
+                    &#x1f1f9;&#x1f1e9;<p>Chad</p>
+                </a>
+                <a id="CL" href="/CL/">
+                    &#x1f1e8;&#x1f1f1;<p>Chile</p>
+                </a>
+                <a id="CN" href="/CN/">
+                    &#x1f1e8;&#x1f1f3;<p>China</p>
+                </a>
+                <a id="CX" href="/CX/">
+                    &#x1f1e8;&#x1f1fd;<p>Christmas Island</p>
+                </a>
+                <a id="CC" href="/CC/">
+                    &#x1f1e8;&#x1f1e8;<p>Cocos (Keeling) Islands</p>
+                </a>
+                <a id="CO" href="/CO/">
+                    &#x1f1e8;&#x1f1f4;<p>Colombia</p>
+                </a>
+                <a id="KM" href="/KM/">
+                    &#x1f1f0;&#x1f1f2;<p>Comoros</p>
+                </a>
+                <a id="CK" href="/CK/">
+                    &#x1f1e8;&#x1f1f0;<p>Cook Islands</p>
+                </a>
+                <a id="CR" href="/CR/">
+                    &#x1f1e8;&#x1f1f7;<p>Costa Rica</p>
+                </a>
+                <a id="HR" href="/HR/">
+                    &#x1f1ed;&#x1f1f7;<p>Croatia</p>
+                </a>
+                <a id="CU" href="/CU/">
+                    &#x1f1e8;&#x1f1fa;<p>Cuba</p>
+                </a>
+                <a id="CW" href="/CW/">
+                    &#x1f1e8;&#x1f1fc;<p>Curacao</p>
+                </a>
+                <a id="CY" href="/CY/">
+                    &#x1f1e8;&#x1f1fe;<p>Cyprus</p>
+                </a>
+                <a id="CZ" href="/CZ/">
+                    &#x1f1e8;&#x1f1ff;<p>Czech Republic</p>
+                </a>
+                <a id="CD" href="/CD/">
+                    &#x1f1e8;&#x1f1e9;<p>Democratic Republic of the Congo</p>
+                </a>
+                <a id="DK" href="/DK/">
+                    &#x1f1e9;&#x1f1f0;<p>Denmark</p>
+                </a>
+                <a id="DJ" href="/DJ/">
+                    &#x1f1e9;&#x1f1ef;<p>Djibouti</p>
+                </a>
+                <a id="DM" href="/DM/">
+                    &#x1f1e9;&#x1f1f2;<p>Dominica</p>
+                </a>
+                <a id="DO" href="/DO/">
+                    &#x1f1e9;&#x1f1f4;<p>Dominican Republic</p>
+                </a>
+                <a id="TL" href="/TL/">
+                    &#x1f1f9;&#x1f1f1;<p>East Timor</p>
+                </a>
+                <a id="EC" href="/EC/">
+                    &#x1f1ea;&#x1f1e8;<p>Ecuador</p>
+                </a>
+                <a id="EG" href="/EG/">
+                    &#x1f1ea;&#x1f1ec;<p>Egypt</p>
+                </a>
+                <a id="SV" href="/SV/">
+                    &#x1f1f8;&#x1f1fb;<p>El Salvador</p>
+                </a>
+                <a id="GQ" href="/GQ/">
+                    &#x1f1ec;&#x1f1f6;<p>Equatorial Guinea</p>
+                </a>
+                <a id="ER" href="/ER/">
+                    &#x1f1ea;&#x1f1f7;<p>Eritrea</p>
+                </a>
+                <a id="EE" href="/EE/">
+                    &#x1f1ea;&#x1f1ea;<p>Estonia</p>
+                </a>
+                <a id="ET" href="/ET/">
+                    &#x1f1ea;&#x1f1f9;<p>Ethiopia</p>
+                </a>
+                <a id="FK" href="/FK/">
+                    &#x1f1eb;&#x1f1f0;<p>Falkland Islands</p>
+                </a>
+                <a id="FO" href="/FO/">
+                    &#x1f1eb;&#x1f1f4;<p>Faroe Islands</p>
+                </a>
+                <a id="FJ" href="/FJ/">
+                    &#x1f1eb;&#x1f1ef;<p>Fiji</p>
+                </a>
+                <a id="FI" href="/FI/">
+                    &#x1f1eb;&#x1f1ee;<p>Finland</p>
+                </a>
+                <a id="FR" href="/FR/">
+                    &#x1f1eb;&#x1f1f7;<p>France</p>
+                </a>
+                <a id="GF" href="/GF/">
+                    &#x1f1ec;&#x1f1eb;<p>French Guiana</p>
+                </a>
+                <a id="PF" href="/PF/">
+                    &#x1f1f5;&#x1f1eb;<p>French Polynesia</p>
+                </a>
+                <a id="TF" href="/TF/">
+                    &#x1f1f9;&#x1f1eb;<p>French Southern Territories</p>
+                </a>
+                <a id="GA" href="/GA/">
+                    &#x1f1ec;&#x1f1e6;<p>Gabon</p>
+                </a>
+                <a id="GM" href="/GM/">
+                    &#x1f1ec;&#x1f1f2;<p>Gambia</p>
+                </a>
+                <a id="GE" href="/GE/">
+                    &#x1f1ec;&#x1f1ea;<p>Georgia</p>
+                </a>
+                <a id="DE" href="/DE/">
+                    &#x1f1e9;&#x1f1ea;<p>Germany</p>
+                </a>
+                <a id="GH" href="/GH/">
+                    &#x1f1ec;&#x1f1ed;<p>Ghana</p>
+                </a>
+                <a id="GI" href="/GI/">
+                    &#x1f1ec;&#x1f1ee;<p>Gibraltar</p>
+                </a>
+                <a id="GR" href="/GR/">
+                    &#x1f1ec;&#x1f1f7;<p>Greece</p>
+                </a>
+                <a id="GL" href="/GL/">
+                    &#x1f1ec;&#x1f1f1;<p>Greenland</p>
+                </a>
+                <a id="GD" href="/GD/">
+                    &#x1f1ec;&#x1f1e9;<p>Grenada</p>
+                </a>
+                <a id="GP" href="/GP/">
+                    &#x1f1ec;&#x1f1f5;<p>Guadeloupe</p>
+                </a>
+                <a id="GU" href="/GU/">
+                    &#x1f1ec;&#x1f1fa;<p>Guam</p>
+                </a>
+                <a id="GT" href="/GT/">
+                    &#x1f1ec;&#x1f1f9;<p>Guatemala</p>
+                </a>
+                <a id="GG" href="/GG/">
+                    &#x1f1ec;&#x1f1ec;<p>Guernsey</p>
+                </a>
+                <a id="GN" href="/GN/">
+                    &#x1f1ec;&#x1f1f3;<p>Guinea</p>
+                </a>
+                <a id="GW" href="/GW/">
+                    &#x1f1ec;&#x1f1fc;<p>Guinea-Bissau</p>
+                </a>
+                <a id="GY" href="/GY/">
+                    &#x1f1ec;&#x1f1fe;<p>Guyana</p>
+                </a>
+                <a id="HT" href="/HT/">
+                    &#x1f1ed;&#x1f1f9;<p>Haiti</p>
+                </a>
+                <a id="HM" href="/HM/">
+                    &#x1f1ed;&#x1f1f2;<p>Heard Island and McDonald Islands</p>
+                </a>
+                <a id="HN" href="/HN/">
+                    &#x1f1ed;&#x1f1f3;<p>Honduras</p>
+                </a>
+                <a id="HK" href="/HK/">
+                    &#x1f1ed;&#x1f1f0;<p>Hong Kong</p>
+                </a>
+                <a id="HU" href="/HU/">
+                    &#x1f1ed;&#x1f1fa;<p>Hungary</p>
+                </a>
+                <a id="IS" href="/IS/">
+                    &#x1f1ee;&#x1f1f8;<p>Iceland</p>
+                </a>
+                <a id="IN" href="/IN/">
+                    &#x1f1ee;&#x1f1f3;<p>India</p>
+                </a>
+                <a id="ID" href="/ID/">
+                    &#x1f1ee;&#x1f1e9;<p>Indonesia</p>
+                </a>
+                <a id="IR" href="/IR/">
+                    &#x1f1ee;&#x1f1f7;<p>Iran</p>
+                </a>
+                <a id="IQ" href="/IQ/">
+                    &#x1f1ee;&#x1f1f6;<p>Iraq</p>
+                </a>
+                <a id="IE" href="/IE/">
+                    &#x1f1ee;&#x1f1ea;<p>Ireland</p>
+                </a>
+                <a id="IM" href="/IM/">
+                    &#x1f1ee;&#x1f1f2;<p>Isle of Man</p>
+                </a>
+                <a id="IL" href="/IL/">
+                    &#x1f1ee;&#x1f1f1;<p>Israel</p>
+                </a>
+                <a id="IT" href="/IT/">
+                    &#x1f1ee;&#x1f1f9;<p>Italy</p>
+                </a>
+                <a id="CI" href="/CI/">
+                    &#x1f1e8;&#x1f1ee;<p>Ivory Coast</p>
+                </a>
+                <a id="JM" href="/JM/">
+                    &#x1f1ef;&#x1f1f2;<p>Jamaica</p>
+                </a>
+                <a id="JP" href="/JP/">
+                    &#x1f1ef;&#x1f1f5;<p>Japan</p>
+                </a>
+                <a id="JE" href="/JE/">
+                    &#x1f1ef;&#x1f1ea;<p>Jersey</p>
+                </a>
+                <a id="JO" href="/JO/">
+                    &#x1f1ef;&#x1f1f4;<p>Jordan</p>
+                </a>
+                <a id="KZ" href="/KZ/">
+                    &#x1f1f0;&#x1f1ff;<p>Kazakhstan</p>
+                </a>
+                <a id="KE" href="/KE/">
+                    &#x1f1f0;&#x1f1ea;<p>Kenya</p>
+                </a>
+                <a id="KI" href="/KI/">
+                    &#x1f1f0;&#x1f1ee;<p>Kiribati</p>
+                </a>
+                <a id="XK" href="/XK/">
+                    &#x1f1fd;&#x1f1f0;<p>Kosovo</p>
+                </a>
+                <a id="KW" href="/KW/">
+                    &#x1f1f0;&#x1f1fc;<p>Kuwait</p>
+                </a>
+                <a id="KG" href="/KG/">
+                    &#x1f1f0;&#x1f1ec;<p>Kyrgyzstan</p>
+                </a>
+                <a id="LA" href="/LA/">
+                    &#x1f1f1;&#x1f1e6;<p>Laos</p>
+                </a>
+                <a id="LV" href="/LV/">
+                    &#x1f1f1;&#x1f1fb;<p>Latvia</p>
+                </a>
+                <a id="LB" href="/LB/">
+                    &#x1f1f1;&#x1f1e7;<p>Lebanon</p>
+                </a>
+                <a id="LS" href="/LS/">
+                    &#x1f1f1;&#x1f1f8;<p>Lesotho</p>
+                </a>
+                <a id="LR" href="/LR/">
+                    &#x1f1f1;&#x1f1f7;<p>Liberia</p>
+                </a>
+                <a id="LY" href="/LY/">
+                    &#x1f1f1;&#x1f1fe;<p>Libya</p>
+                </a>
+                <a id="LI" href="/LI/">
+                    &#x1f1f1;&#x1f1ee;<p>Liechtenstein</p>
+                </a>
+                <a id="LT" href="/LT/">
+                    &#x1f1f1;&#x1f1f9;<p>Lithuania</p>
+                </a>
+                <a id="LU" href="/LU/">
+                    &#x1f1f1;&#x1f1fa;<p>Luxembourg</p>
+                </a>
+                <a id="MO" href="/MO/">
+                    &#x1f1f2;&#x1f1f4;<p>Macao</p>
+                </a>
+                <a id="MG" href="/MG/">
+                    &#x1f1f2;&#x1f1ec;<p>Madagascar</p>
+                </a>
+                <a id="MW" href="/MW/">
+                    &#x1f1f2;&#x1f1fc;<p>Malawi</p>
+                </a>
+                <a id="MY" href="/MY/">
+                    &#x1f1f2;&#x1f1fe;<p>Malaysia</p>
+                </a>
+                <a id="MV" href="/MV/">
+                    &#x1f1f2;&#x1f1fb;<p>Maldives</p>
+                </a>
+                <a id="ML" href="/ML/">
+                    &#x1f1f2;&#x1f1f1;<p>Mali</p>
+                </a>
+                <a id="MT" href="/MT/">
+                    &#x1f1f2;&#x1f1f9;<p>Malta</p>
+                </a>
+                <a id="MH" href="/MH/">
+                    &#x1f1f2;&#x1f1ed;<p>Marshall Islands</p>
+                </a>
+                <a id="MQ" href="/MQ/">
+                    &#x1f1f2;&#x1f1f6;<p>Martinique</p>
+                </a>
+                <a id="MR" href="/MR/">
+                    &#x1f1f2;&#x1f1f7;<p>Mauritania</p>
+                </a>
+                <a id="MU" href="/MU/">
+                    &#x1f1f2;&#x1f1fa;<p>Mauritius</p>
+                </a>
+                <a id="YT" href="/YT/">
+                    &#x1f1fe;&#x1f1f9;<p>Mayotte</p>
+                </a>
+                <a id="MX" href="/MX/">
+                    &#x1f1f2;&#x1f1fd;<p>Mexico</p>
+                </a>
+                <a id="FM" href="/FM/">
+                    &#x1f1eb;&#x1f1f2;<p>Micronesia</p>
+                </a>
+                <a id="MD" href="/MD/">
+                    &#x1f1f2;&#x1f1e9;<p>Moldova</p>
+                </a>
+                <a id="MC" href="/MC/">
+                    &#x1f1f2;&#x1f1e8;<p>Monaco</p>
+                </a>
+                <a id="MN" href="/MN/">
+                    &#x1f1f2;&#x1f1f3;<p>Mongolia</p>
+                </a>
+                <a id="ME" href="/ME/">
+                    &#x1f1f2;&#x1f1ea;<p>Montenegro</p>
+                </a>
+                <a id="MS" href="/MS/">
+                    &#x1f1f2;&#x1f1f8;<p>Montserrat</p>
+                </a>
+                <a id="MA" href="/MA/">
+                    &#x1f1f2;&#x1f1e6;<p>Morocco</p>
+                </a>
+                <a id="MZ" href="/MZ/">
+                    &#x1f1f2;&#x1f1ff;<p>Mozambique</p>
+                </a>
+                <a id="MM" href="/MM/">
+                    &#x1f1f2;&#x1f1f2;<p>Myanmar (Burma)</p>
+                </a>
+                <a id="NA" href="/NA/">
+                    &#x1f1f3;&#x1f1e6;<p>Namibia</p>
+                </a>
+                <a id="NR" href="/NR/">
+                    &#x1f1f3;&#x1f1f7;<p>Nauru</p>
+                </a>
+                <a id="NP" href="/NP/">
+                    &#x1f1f3;&#x1f1f5;<p>Nepal</p>
+                </a>
+                <a id="NL" href="/NL/">
+                    &#x1f1f3;&#x1f1f1;<p>Netherlands</p>
+                </a>
+                <a id="NC" href="/NC/">
+                    &#x1f1f3;&#x1f1e8;<p>New Caledonia</p>
+                </a>
+                <a id="NZ" href="/NZ/">
+                    &#x1f1f3;&#x1f1ff;<p>New Zealand</p>
+                </a>
+                <a id="NI" href="/NI/">
+                    &#x1f1f3;&#x1f1ee;<p>Nicaragua</p>
+                </a>
+                <a id="NE" href="/NE/">
+                    &#x1f1f3;&#x1f1ea;<p>Niger</p>
+                </a>
+                <a id="NG" href="/NG/">
+                    &#x1f1f3;&#x1f1ec;<p>Nigeria</p>
+                </a>
+                <a id="NU" href="/NU/">
+                    &#x1f1f3;&#x1f1fa;<p>Niue</p>
+                </a>
+                <a id="NF" href="/NF/">
+                    &#x1f1f3;&#x1f1eb;<p>Norfolk Island</p>
+                </a>
+                <a id="KP" href="/KP/">
+                    &#x1f1f0;&#x1f1f5;<p>North Korea</p>
+                </a>
+                <a id="MK" href="/MK/">
+                    &#x1f1f2;&#x1f1f0;<p>North Macedonia</p>
+                </a>
+                <a id="MP" href="/MP/">
+                    &#x1f1f2;&#x1f1f5;<p>Northern Mariana Islands</p>
+                </a>
+                <a id="NO" href="/NO/">
+                    &#x1f1f3;&#x1f1f4;<p>Norway</p>
+                </a>
+                <a id="OM" href="/OM/">
+                    &#x1f1f4;&#x1f1f2;<p>Oman</p>
+                </a>
+                <a id="PK" href="/PK/">
+                    &#x1f1f5;&#x1f1f0;<p>Pakistan</p>
+                </a>
+                <a id="PW" href="/PW/">
+                    &#x1f1f5;&#x1f1fc;<p>Palau</p>
+                </a>
+                <a id="PS" href="/PS/">
+                    &#x1f1f5;&#x1f1f8;<p>Palestine</p>
+                </a>
+                <a id="PA" href="/PA/">
+                    &#x1f1f5;&#x1f1e6;<p>Panama</p>
+                </a>
+                <a id="PG" href="/PG/">
+                    &#x1f1f5;&#x1f1ec;<p>Papua New Guinea</p>
+                </a>
+                <a id="PY" href="/PY/">
+                    &#x1f1f5;&#x1f1fe;<p>Paraguay</p>
+                </a>
+                <a id="PE" href="/PE/">
+                    &#x1f1f5;&#x1f1ea;<p>Peru</p>
+                </a>
+                <a id="PH" href="/PH/">
+                    &#x1f1f5;&#x1f1ed;<p>Philippines</p>
+                </a>
+                <a id="PN" href="/PN/">
+                    &#x1f1f5;&#x1f1f3;<p>Pitcairn Islands</p>
+                </a>
+                <a id="PL" href="/PL/">
+                    &#x1f1f5;&#x1f1f1;<p>Poland</p>
+                </a>
+                <a id="PT" href="/PT/">
+                    &#x1f1f5;&#x1f1f9;<p>Portugal</p>
+                </a>
+                <a id="PR" href="/PR/">
+                    &#x1f1f5;&#x1f1f7;<p>Puerto Rico</p>
+                </a>
+                <a id="QA" href="/QA/">
+                    &#x1f1f6;&#x1f1e6;<p>Qatar</p>
+                </a>
+                <a id="CG" href="/CG/">
+                    &#x1f1e8;&#x1f1ec;<p>Republic of the Congo</p>
+                </a>
+                <a id="RO" href="/RO/">
+                    &#x1f1f7;&#x1f1f4;<p>Romania</p>
+                </a>
+                <a id="RU" href="/RU/">
+                    &#x1f1f7;&#x1f1fa;<p>Russia</p>
+                </a>
+                <a id="RW" href="/RW/">
+                    &#x1f1f7;&#x1f1fc;<p>Rwanda</p>
+                </a>
+                <a id="RE" href="/RE/">
+                    &#x1f1f7;&#x1f1ea;<p>Réunion</p>
+                </a>
+                <a id="BL" href="/BL/">
+                    &#x1f1e7;&#x1f1f1;<p>Saint Barthélemy</p>
+                </a>
+                <a id="SH" href="/SH/">
+                    &#x1f1f8;&#x1f1ed;<p>Saint Helena</p>
+                </a>
+                <a id="KN" href="/KN/">
+                    &#x1f1f0;&#x1f1f3;<p>Saint Kitts and Nevis</p>
+                </a>
+                <a id="LC" href="/LC/">
+                    &#x1f1f1;&#x1f1e8;<p>Saint Lucia</p>
+                </a>
+                <a id="MF" href="/MF/">
+                    &#x1f1f2;&#x1f1eb;<p>Saint Martin</p>
+                </a>
+                <a id="PM" href="/PM/">
+                    &#x1f1f5;&#x1f1f2;<p>Saint Pierre and Miquelon</p>
+                </a>
+                <a id="VC" href="/VC/">
+                    &#x1f1fb;&#x1f1e8;<p>Saint Vincent and the Grenadines</p>
+                </a>
+                <a id="WS" href="/WS/">
+                    &#x1f1fc;&#x1f1f8;<p>Samoa</p>
+                </a>
+                <a id="SM" href="/SM/">
+                    &#x1f1f8;&#x1f1f2;<p>San Marino</p>
+                </a>
+                <a id="SA" href="/SA/">
+                    &#x1f1f8;&#x1f1e6;<p>Saudi Arabia</p>
+                </a>
+                <a id="SN" href="/SN/">
+                    &#x1f1f8;&#x1f1f3;<p>Senegal</p>
+                </a>
+                <a id="RS" href="/RS/">
+                    &#x1f1f7;&#x1f1f8;<p>Serbia</p>
+                </a>
+                <a id="SC" href="/SC/">
+                    &#x1f1f8;&#x1f1e8;<p>Seychelles</p>
+                </a>
+                <a id="SL" href="/SL/">
+                    &#x1f1f8;&#x1f1f1;<p>Sierra Leone</p>
+                </a>
+                <a id="SG" href="/SG/">
+                    &#x1f1f8;&#x1f1ec;<p>Singapore</p>
+                </a>
+                <a id="SX" href="/SX/">
+                    &#x1f1f8;&#x1f1fd;<p>Sint Maarten</p>
+                </a>
+                <a id="SK" href="/SK/">
+                    &#x1f1f8;&#x1f1f0;<p>Slovakia</p>
+                </a>
+                <a id="SI" href="/SI/">
+                    &#x1f1f8;&#x1f1ee;<p>Slovenia</p>
+                </a>
+                <a id="SB" href="/SB/">
+                    &#x1f1f8;&#x1f1e7;<p>Solomon Islands</p>
+                </a>
+                <a id="SO" href="/SO/">
+                    &#x1f1f8;&#x1f1f4;<p>Somalia</p>
+                </a>
+                <a id="ZA" href="/ZA/">
+                    &#x1f1ff;&#x1f1e6;<p>South Africa</p>
+                </a>
+                <a id="GS" href="/GS/">
+                    &#x1f1ec;&#x1f1f8;<p>South Georgia and the South Sandwich Islands</p>
+                </a>
+                <a id="KR" href="/KR/">
+                    &#x1f1f0;&#x1f1f7;<p>South Korea</p>
+                </a>
+                <a id="SS" href="/SS/">
+                    &#x1f1f8;&#x1f1f8;<p>South Sudan</p>
+                </a>
+                <a id="ES" href="/ES/">
+                    &#x1f1ea;&#x1f1f8;<p>Spain</p>
+                </a>
+                <a id="LK" href="/LK/">
+                    &#x1f1f1;&#x1f1f0;<p>Sri Lanka</p>
+                </a>
+                <a id="SD" href="/SD/">
+                    &#x1f1f8;&#x1f1e9;<p>Sudan</p>
+                </a>
+                <a id="SR" href="/SR/">
+                    &#x1f1f8;&#x1f1f7;<p>Suriname</p>
+                </a>
+                <a id="SJ" href="/SJ/">
+                    &#x1f1f8;&#x1f1ef;<p>Svalbard and Jan Mayen</p>
+                </a>
+                <a id="SZ" href="/SZ/">
+                    &#x1f1f8;&#x1f1ff;<p>Swaziland</p>
+                </a>
+                <a id="SE" href="/SE/">
+                    &#x1f1f8;&#x1f1ea;<p>Sweden</p>
+                </a>
+                <a id="CH" href="/CH/">
+                    &#x1f1e8;&#x1f1ed;<p>Switzerland</p>
+                </a>
+                <a id="SY" href="/SY/">
+                    &#x1f1f8;&#x1f1fe;<p>Syria</p>
+                </a>
+                <a id="ST" href="/ST/">
+                    &#x1f1f8;&#x1f1f9;<p>São Tomé and Príncipe</p>
+                </a>
+                <a id="TW" href="/TW/">
+                    &#x1f1f9;&#x1f1fc;<p>Taiwan</p>
+                </a>
+                <a id="TJ" href="/TJ/">
+                    &#x1f1f9;&#x1f1ef;<p>Tajikistan</p>
+                </a>
+                <a id="TZ" href="/TZ/">
+                    &#x1f1f9;&#x1f1ff;<p>Tanzania</p>
+                </a>
+                <a id="TH" href="/TH/">
+                    &#x1f1f9;&#x1f1ed;<p>Thailand</p>
+                </a>
+                <a id="TG" href="/TG/">
+                    &#x1f1f9;&#x1f1ec;<p>Togo</p>
+                </a>
+                <a id="TK" href="/TK/">
+                    &#x1f1f9;&#x1f1f0;<p>Tokelau</p>
+                </a>
+                <a id="TO" href="/TO/">
+                    &#x1f1f9;&#x1f1f4;<p>Tonga</p>
+                </a>
+                <a id="TT" href="/TT/">
+                    &#x1f1f9;&#x1f1f9;<p>Trinidad and Tobago</p>
+                </a>
+                <a id="TN" href="/TN/">
+                    &#x1f1f9;&#x1f1f3;<p>Tunisia</p>
+                </a>
+                <a id="TR" href="/TR/">
+                    &#x1f1f9;&#x1f1f7;<p>Turkey</p>
+                </a>
+                <a id="TM" href="/TM/">
+                    &#x1f1f9;&#x1f1f2;<p>Turkmenistan</p>
+                </a>
+                <a id="TC" href="/TC/">
+                    &#x1f1f9;&#x1f1e8;<p>Turks and Caicos Islands</p>
+                </a>
+                <a id="TV" href="/TV/">
+                    &#x1f1f9;&#x1f1fb;<p>Tuvalu</p>
+                </a>
+                <a id="UM" href="/UM/">
+                    &#x1f1fa;&#x1f1f2;<p>U.S. Minor Outlying Islands</p>
+                </a>
+                <a id="VI" href="/VI/">
+                    &#x1f1fb;&#x1f1ee;<p>U.S. Virgin Islands</p>
+                </a>
+                <a id="UG" href="/UG/">
+                    &#x1f1fa;&#x1f1ec;<p>Uganda</p>
+                </a>
+                <a id="UA" href="/UA/">
+                    &#x1f1fa;&#x1f1e6;<p>Ukraine</p>
+                </a>
+                <a id="AE" href="/AE/">
+                    &#x1f1e6;&#x1f1ea;<p>United Arab Emirates</p>
+                </a>
+                <a id="UK" href="/UK/">
+                    🇬🇧 <p>United Kingdom</p>
+                </a>
+                <a id="US" href="/US/">
+                    &#x1f1fa;&#x1f1f8;<p>United States</p>
+                </a>
+                <a id="UY" href="/UY/">
+                    &#x1f1fa;&#x1f1fe;<p>Uruguay</p>
+                </a>
+                <a id="UZ" href="/UZ/">
+                    &#x1f1fa;&#x1f1ff;<p>Uzbekistan</p>
+                </a>
+                <a id="VU" href="/VU/">
+                    &#x1f1fb;&#x1f1fa;<p>Vanuatu</p>
+                </a>
+                <a id="VA" href="/VA/">
+                    &#x1f1fb;&#x1f1e6;<p>Vatican City</p>
+                </a>
+                <a id="VE" href="/VE/">
+                    &#x1f1fb;&#x1f1ea;<p>Venezuela</p>
+                </a>
+                <a id="VN" href="/VN/">
+                    &#x1f1fb;&#x1f1f3;<p>Vietnam</p>
+                </a>
+                <a id="WF" href="/WF/">
+                    &#x1f1fc;&#x1f1eb;<p>Wallis and Futuna</p>
+                </a>
+                <a id="EH" href="/EH/">
+                    &#x1f1ea;&#x1f1ed;<p>Western Sahara</p>
+                </a>
+                <a id="YE" href="/YE/">
+                    &#x1f1fe;&#x1f1ea;<p>Yemen</p>
+                </a>
+                <a id="ZM" href="/ZM/">
+                    &#x1f1ff;&#x1f1f2;<p>Zambia</p>
+                </a>
+                <a id="ZW" href="/ZW/">
+                    &#x1f1ff;&#x1f1fc;<p>Zimbabwe</p>
+                </a>
+                <a id="AX" href="/AX/">
+                    &#x1f1e6;&#x1f1fd;<p>Åland</p>
+                </a>
+            </section>
+        </details>
+        <footer>
+            © 2024 <a rel="nofollow" href="https://maheshwarravuri.com">Maheshwar Ravuri </a>
+            . All rights
+			reserved
 
-    <!-- Prelaods -->
-
-    <link rel="preload" href="style.css" as="style" />
-    <link rel="preload" href="main.dart.js" as="script" />
-
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="IPTV" />
-    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
-
-    <title>📺 IPTV</title>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/hls.js@latest"
-      type="application/javascript"
-    ></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
-
-     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-performance.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyCmIhLkqSq7eG9cm4boLYcv2nKujSqFMX8",
-        authDomain: "iptv-5f88c.firebaseapp.com",
-        databaseURL: "https://iptv-5f88c.firebaseio.com",
-        projectId: "iptv-5f88c",
-        storageBucket: "iptv-5f88c.appspot.com",
-        messagingSenderId: "755513039589",
-        appId: "1:755513039589:web:4059c61345cabd65cf920c",
-        measurementId: "G-PZJ4WECPVW",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-      firebase.performance();
-    </script>
-    <script>
-      if (typeof firebase.analytics !== "function") {
-        firebase.analytics = () =>
-          console.log(
-            "Adblocker detected. Created fake analytics so the app doesn't crash."
-          );
-      }
-    </script>
-  </head>
-
-  <body>
-    <noscript>Please enable JavaScript!</noscript>
-    <div class="sk-cube-grid">
-      <div class="sk-cube sk-cube1"></div>
-      <div class="sk-cube sk-cube2"></div>
-      <div class="sk-cube sk-cube3"></div>
-      <div class="sk-cube sk-cube4"></div>
-      <div class="sk-cube sk-cube5"></div>
-      <div class="sk-cube sk-cube6"></div>
-      <div class="sk-cube sk-cube7"></div>
-      <div class="sk-cube sk-cube8"></div>
-      <div class="sk-cube sk-cube9"></div>
-    </div>
-
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("flutter-first-frame", function () {
-          navigator.serviceWorker.register("flutter_service_worker.js");
-        });
-      }
-    </script>
-    <script src="main.dart.js" type="application/javascript" defer></script>
-  </body>
+        </footer>
+        <script type="module" src="/__/tracking.astro_astro_type_script_index_0_lang.BD83wpeo.js"></script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8978e3e3aca084e7","r":1,"version":"2024.4.1","token":"6f5d8ffbced74a93b8bb751f91892a07"}' crossorigin="anonymous"></script>
+    </body>
 </html>
