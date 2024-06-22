@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<script defer src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cinema One</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
+        <link rel="preconnect" href="https://api.iptv-web.app">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Noto+Color+Emoji&display=swap">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Stream publicly available live TV channels.">
+        <meta name="generator" content="Astro v4.10.2">
+        <meta name="theme-color" content="#000000">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="home" href="https://iptv-web.app/">
+        <link rel="canonical" href="https://iptv-web.app/PH/CinemaOne.ph/">
+        <link rel="sitemap" href="/sitemap-index.xml">
+        <meta name="googlebot" content="notranslate">
+        <meta name="google-site-verification" content="f9t27g4PfcjrZN3PeB8NwebkYHzWnrWTX8eiU-OA4nc">
+        <link rel="stylesheet" href="/__/_country_.DFxizHEy.css">
+        <link rel="stylesheet" href="/__/_country_.CAmKo96m.css">
+        <link rel="stylesheet" href="/__/_id_.CgdLbmAo.css">
+    </head>
+    <body>
+        <header class="astro-7a7bzblm">
+            <a class="back astro-7a7bzblm" href="/PH/#CinemaOne.ph">
+                <img src="/__/E24D.Dz08rX1B.svg" alt="Navigation back" class="astro-7a7bzblm">
+            </a>
+            <h1 class="astro-7a7bzblm">Cinema One</h1>
+        </header>
+        <span class="astro-pesr5ge3">
+            <div id="controls" class="astro-pesr5ge3">
+                <video id="video" src="https://cinemaone-abscbn-ono.amagi.tv/index.m3u8" muted controls autoplay crossorigin="anonymous" class="astro-pesr5ge3"></video>
+            </div>
+        </span>
+        <footer>
+            © 2024 <a rel="nofollow" href="https://maheshwarravuri.com">Maheshwar Ravuri </a>
+            . All rights
+			reserved
+
+        </footer>
+        <script type="module" src="/__/tracking.astro_astro_type_script_index_0_lang.BD83wpeo.js"></script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8978e3754d4784e7","r":1,"version":"2024.4.1","token":"6f5d8ffbced74a93b8bb751f91892a07"}' crossorigin="anonymous"></script>
+    </body>
+</html>
+<script type="module" src="/__/_id_.astro_astro_type_script_index_0_lang.CxgX_pjV.js"></script>
